@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<%- include("partials/navbar.ejs") %>
+
+<content>
+<% if (locals.posts.length > 0) { %>
+    <% posts.forEach(element => { %>
+    <div class="post">
+        <h1><%= element[0] %></h1>
+        <div>
+            <p class="data"><%= element[3] %></p>
+            <p class="autor">Stworzone przez: <strong><%= element[1] %></strong></p>
+            <p class="tresc_posta"><%= element[2] %></p>
+        </div>
+    </div>
+    <% }) %>
+<% } else { %>
+    <p>Brak postów do wyświetlenia</p>
+<% } %>
+</content>
+
+<%- include("partials/footer.ejs") %>
